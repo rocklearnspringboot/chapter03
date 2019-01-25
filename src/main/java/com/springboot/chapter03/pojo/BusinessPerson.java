@@ -24,7 +24,9 @@ public class BusinessPerson implements Person {
     }
 
     @Override
+    @Autowired @Qualifier("dog")
     public void setAnimal(Animal animal) {
+        System.out.println("delay the DI");
         this.animal = animal;
     }
 }
