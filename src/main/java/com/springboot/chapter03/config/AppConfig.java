@@ -1,11 +1,19 @@
 package com.springboot.chapter03.config;
 
-import org.springframework.context.annotation.Bean;
+import com.springboot.chapter03.pojo.User;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import org.springframework.context.annotation.ComponentScan.Filter;
+import org.springframework.stereotype.Service;
+
+
 @Configuration  // 1.represents: this is the java config. Spring container use it to set IoC container and set beans
-@ComponentScan
+//@ComponentScan("com.springboot.chapter03.*")
+//@ComponentScan(basePackages = {"com.springboot.chapter03.pojo"})
+//@ComponentScan(basePackageClasses = {User.class})
+
+@ComponentScan(basePackages = "com.springboot.chapter03.*", excludeFilters = {@Filter(classes = {Service.class})})
 public class AppConfig {
 
     public User initUser() {
@@ -15,4 +23,5 @@ public class AppConfig {
         user.setUserName("user_name_1");
         return user;
     }
+
 }

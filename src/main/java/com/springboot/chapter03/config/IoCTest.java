@@ -1,5 +1,6 @@
 package com.springboot.chapter03.config;
 
+import com.springboot.chapter03.pojo.User;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 //import org.apache.log4j.Logger;
 import java.sql.SQLException;
