@@ -4,6 +4,6 @@ public interface Person {
 
     public void service();
 
-    public void setDog(Animal dog);
+    public void setAnimal(Animal animal);
 
 }

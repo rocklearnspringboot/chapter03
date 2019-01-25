@@ -3,21 +3,23 @@ package com.springboot.chapter03.pojo;
 import com.springboot.chapter03.pojo.definition.Animal;
 import com.springboot.chapter03.pojo.definition.Person;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class BusinessPerson implements Person {
 
     @Autowired  // use type of property to find the corresponding Bean
-    private Animal dog = null;
+    @Qualifier("cat")
+    private Animal animal = null;
 
     @Override
     public void service() {
-        this.dog.use();
+        this.animal.use();
     }
 
     @Override
-    public void setDog(Animal animal) {
-        this.dog = animal;
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
     }
 }
