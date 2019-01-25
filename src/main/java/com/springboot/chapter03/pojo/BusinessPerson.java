@@ -9,9 +9,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class BusinessPerson implements Person {
 
-    @Autowired  // use type of property to find the corresponding Bean
-    @Qualifier("cat")
+//    @Autowired  // use type of property to find the corresponding Bean
+//    @Qualifier("cat")
+//    private Animal animal = null;
     private Animal animal = null;
+
+    public BusinessPerson(@Autowired @Qualifier("cat") Animal animal) {
+        this.animal = animal;
+    }
 
     @Override
     public void service() {
