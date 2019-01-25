@@ -16,5 +16,7 @@ public class IoCTest {
 //        log.info(user.getUserName());
 //        System.out.println(user.getUserName() + ": in main");
         person.service();
+
+        ctx.close();
     }
 }
