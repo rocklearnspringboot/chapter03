@@ -1,5 +1,6 @@
 package com.springboot.chapter03.config;
 
+import com.springboot.chapter03.pojo.DataBaseProperties;
 import com.springboot.chapter03.pojo.User;
 import com.springboot.chapter03.pojo.BusinessPerson;
 import com.springboot.chapter03.pojo.definition.Person;
@@ -12,11 +13,14 @@ public class IoCTest {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
         User user = ctx.getBean(User.class);
 
-        Person person = ctx.getBean(BusinessPerson.class);
+//        Person person = ctx.getBean(BusinessPerson.class);
+//        person.service();
 //        log.info(user.getUserName());
 //        System.out.println(user.getUserName() + ": in main");
-        person.service();
 
-        ctx.close();
+        DataBaseProperties db = ctx.getBean(DataBaseProperties.class);
+        db.getDriverName();
+
+//        ctx.close();
     }
 }
