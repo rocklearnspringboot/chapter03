@@ -4,6 +4,7 @@ import com.springboot.chapter03.pojo.DataBaseProperties;
 import com.springboot.chapter03.pojo.User;
 import com.springboot.chapter03.pojo.BusinessPerson;
 import com.springboot.chapter03.pojo.definition.Person;
+import com.springboot.chapter03.scope.pojo.ScopeBean;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 //import org.apache.log4j.Logger;
 import java.sql.SQLException;
@@ -18,8 +19,12 @@ public class IoCTest {
 //        log.info(user.getUserName());
 //        System.out.println(user.getUserName() + ": in main");
 
-        DataBaseProperties db = ctx.getBean(DataBaseProperties.class);
-        db.getDriverName();
+//        DataBaseProperties db = ctx.getBean(DataBaseProperties.class);
+//        db.getDriverName();
+        ScopeBean scopeBean1 = ctx.getBean(ScopeBean.class);
+        ScopeBean scopeBean2 = ctx.getBean(ScopeBean.class);
+        Boolean eq = scopeBean1 == scopeBean2;
+        System.out.println(eq);
 
 //        ctx.close();
     }
