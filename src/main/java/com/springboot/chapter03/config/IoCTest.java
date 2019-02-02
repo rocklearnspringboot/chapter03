@@ -19,12 +19,12 @@ public class IoCTest {
 //        log.info(user.getUserName());
 //        System.out.println(user.getUserName() + ": in main");
 
-//        DataBaseProperties db = ctx.getBean(DataBaseProperties.class);
-//        db.getDriverName();
-        ScopeBean scopeBean1 = ctx.getBean(ScopeBean.class);
-        ScopeBean scopeBean2 = ctx.getBean(ScopeBean.class);
-        Boolean eq = scopeBean1 == scopeBean2;
-        System.out.println(eq);
+        DataBaseProperties db = ctx.getBean(DataBaseProperties.class);
+        db.getDriverName();
+//        ScopeBean scopeBean1 = ctx.getBean(ScopeBean.class);
+//        ScopeBean scopeBean2 = ctx.getBean(ScopeBean.class);
+//        Boolean eq = scopeBean1 == scopeBean2;
+//        System.out.println(eq);
 
 //        ctx.close();
     }
