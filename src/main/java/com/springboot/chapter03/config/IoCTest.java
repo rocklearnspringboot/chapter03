@@ -5,9 +5,12 @@ import com.springboot.chapter03.pojo.User;
 import com.springboot.chapter03.pojo.BusinessPerson;
 import com.springboot.chapter03.pojo.definition.Person;
 import com.springboot.chapter03.scope.pojo.ScopeBean;
+import com.springboot.other.pojo.Squirrel;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 //import org.apache.log4j.Logger;
 import java.sql.SQLException;
+
+
 
 public class IoCTest {
     public static void main(String[] args) throws SQLException {
@@ -25,6 +28,9 @@ public class IoCTest {
 //        ScopeBean scopeBean2 = ctx.getBean(ScopeBean.class);
 //        Boolean eq = scopeBean1 == scopeBean2;
 //        System.out.println(eq);
+
+        Squirrel squirrel = ctx.getBean(Squirrel.class);
+        squirrel.use();
 
 //        ctx.close();
     }

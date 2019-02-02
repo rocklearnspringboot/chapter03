@@ -22,6 +22,7 @@ import java.util.Properties;
         basePackages = "com.springboot.chapter03.*",
         excludeFilters = {@Filter(classes = {Service.class})},
         lazyInit = true)
+@ImportResource(value = {"classpath:spring-other.xml"})
 public class AppConfig {
 
     public User initUser() {
@@ -59,7 +60,7 @@ public class AppConfig {
     @Profile("dev")
     public DataSource getDevDataSource() {
         Properties props = new Properties();
-        props.setProperty("driver", "com.mysql.jdbc.Driver");
+        props.setProperty("driverName", "com.mysql.jdbc.Driver");
         props.setProperty("url", "jdbc:mysql://localhost:3306/dev_spring_boot");
         props.setProperty("username", "root");
         props.setProperty("password", "123456");
@@ -76,7 +77,7 @@ public class AppConfig {
     @Profile("test")
     public DataSource getTestDataSource() {
         Properties props = new Properties();
-        props.setProperty("driver", "com.mysql.jdbc.Driver");
+        props.setProperty("driverName", "com.mysql.jdbc.Driver");
         props.setProperty("url", "jdbc:mysql://localhost:3306/test_spring_boot");
         props.setProperty("username", "root");
         props.setProperty("password", "123456");
