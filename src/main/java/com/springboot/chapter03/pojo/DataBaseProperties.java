@@ -7,6 +7,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Component
 @ConfigurationProperties("database")
 public class DataBaseProperties {
+
+    @Value("#{T(System).currentTimeMillis()}")
+    private Long initTime = null;
+
 //    @Value("${database.driverName}")
     private String driverName = null;
 
@@ -41,6 +45,7 @@ public class DataBaseProperties {
 
     public String getDriverName() {
         System.out.println(this.driverName);
+        System.out.println(this.initTime);
         return driverName;
     }
 

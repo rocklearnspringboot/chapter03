@@ -7,7 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
 //@ComponentScan(basePackages = {"com.springboot.chapter03"}) // SpringBootApplication already have
-//@PropertySource(value={"classpath:jdbc.properties"}, ignoreResourceNotFound=true) // classpath; ignoreResourceNotFound
+@PropertySource(value={"classpath:jdbc.properties"}, ignoreResourceNotFound=true) // classpath; ignoreResourceNotFound
 public class Chapter03Application {
 
 	public static void main(String[] args) {
